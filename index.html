@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minty — Mi mascotita</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><strong>minty</strong><small>mi mascotita virtual</small></div></div>
+      <div class="wallet"><span>🪙</span><strong id="coins">120</strong><span class="coin-label">moneditas</span></div>
+      <button class="icon-button" id="soundBtn" aria-label="Activar o silenciar sonidos" title="Sonido">♫</button>
+    </header>
+
+    <section class="status-panel">
+      <div class="level-wrap"><span class="level-badge" id="level">Nv. 1</span><div class="xp-track"><span id="xpFill"></span></div><small id="xpText">0 / 100 XP</small></div>
+      <div class="stats">
+        <div class="stat"><span class="stat-icon">🍓</span><div class="stat-label"><span>Hambre</span><b id="hungerVal">72%</b><div class="bar"><i id="hungerBar" class="pink"></i></div></div></div>
+        <div class="stat"><span class="stat-icon">💖</span><div class="stat-label"><span>Salud</span><b id="healthVal">90%</b><div class="bar"><i id="healthBar" class="green"></i></div></div></div>
+        <div class="stat"><span class="stat-icon">🎮</span><div class="stat-label"><span>Diversión</span><b id="funVal">65%</b><div class="bar"><i id="funBar" class="purple"></i></div></div></div>
+        <div class="stat"><span class="stat-icon">🌙</span><div class="stat-label"><span>Energía</span><b id="energyVal">80%</b><div class="bar"><i id="energyBar" class="blue"></i></div></div></div>
+      </div>
+    </section>
+
+    <main class="game-layout">
+      <aside class="side-nav">
+        <button class="room-btn active" data-room="home"><span>🏡</span><small>Inicio</small></button>
+        <button class="room-btn" data-room="kitchen"><span>🍓</span><small>Cocina</small></button>
+        <button class="room-btn" data-room="bath"><span>🫧</span><small>Baño</small></button>
+        <button class="room-btn" data-room="lab"><span>🧪</span><small>Laboratorio</small></button>
+        <button class="room-btn" data-room="bedroom"><span>🌙</span><small>Dormitorio</small></button>
+        <button class="room-btn" data-room="play"><span>🎮</span><small>Juegos</small></button>
+        <button class="room-btn" data-room="shop"><span>🛍️</span><small>Tienda</small></button>
+      </aside>
+
+      <section class="room-scene" id="scene">
+        <div class="scene-top"><div><span class="eyebrow">TU PEQUEÑO UNIVERSO</span><h1 id="roomTitle">¡Hola de nuevo!</h1><p id="roomSubtitle">Minty tiene ganas de pasar un ratito con vos.</p></div><span class="weather-pill">☀️ Día bonito</span></div>
+        <div class="room-art home-room" id="roomArt">
+          <div class="decor decor-one">✿</div><div class="decor decor-two">☁</div><div class="plant">🪴</div>
+          <div class="rug"></div><div class="pet-wrap" id="petWrap">
+            <svg class="pet" id="petSvg" viewBox="0 0 300 270" role="img" aria-label="Minty, una mascotita celeste">
+              <defs>
+                <linearGradient id="bodyGrad" x1="0" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#a6f6f3"/><stop offset="55%" stop-color="#65dfe9"/><stop offset="100%" stop-color="#25b8d0"/></linearGradient>
+                <linearGradient id="eyeGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#151e31"/><stop offset="100%" stop-color="#00030b"/></linearGradient>
+              </defs>
+              <ellipse cx="150" cy="250" rx="94" ry="13" fill="#668e9c" opacity=".2"/>
+              <path d="M45 213 C26 182 34 126 58 86 C80 48 113 29 151 29 C203 28 253 70 265 128 C275 177 253 218 222 233 C180 254 78 247 45 213Z" fill="url(#bodyGrad)" stroke="#183447" stroke-width="7" stroke-linejoin="round"/>
+              <path d="M64 190 C87 219 177 234 227 210" fill="none" stroke="#c7ffff" stroke-width="10" opacity=".45" stroke-linecap="round"/>
+              <g id="leftEye"><ellipse cx="101" cy="111" rx="48" ry="52" fill="#fff" stroke="#183447" stroke-width="6"/><ellipse cx="104" cy="112" rx="33" ry="36" fill="#28d8ed"/><ellipse cx="105" cy="112" rx="25" ry="28" fill="url(#eyeGrad)"/><circle cx="117" cy="96" r="10" fill="#fff"/><circle cx="88" cy="126" r="5" fill="#fff" opacity=".8"/></g>
+              <g id="rightEye"><ellipse cx="203" cy="121" rx="43" ry="47" fill="#fff" stroke="#183447" stroke-width="6"/><ellipse cx="204" cy="121" rx="30" ry="33" fill="#28d8ed"/><ellipse cx="205" cy="121" rx="23" ry="26" fill="url(#eyeGrad)"/><circle cx="216" cy="107" r="9" fill="#fff"/><circle cx="191" cy="133" r="4" fill="#fff" opacity=".8"/></g>
+              <path id="mouth" d="M128 157 Q153 175 180 157 Q175 190 151 188 Q132 185 128 157Z" fill="#e83c55" stroke="#183447" stroke-width="5" stroke-linejoin="round"/>
+              <path id="mouthLine" d="M135 169 Q154 179 174 168" fill="none" stroke="#ffb4bf" stroke-width="4" stroke-linecap="round"/>
+              <g id="blush" opacity=".35"><ellipse cx="65" cy="155" rx="15" ry="7" fill="#ff8eaf"/><ellipse cx="239" cy="160" rx="14" ry="7" fill="#ff8eaf"/></g>
+              <g id="hat" style="display:none"><path d="M104 44 Q150 -4 200 43Z" fill="#b49aff" stroke="#183447" stroke-width="5"/><path d="M96 44 Q150 30 207 44" fill="none" stroke="#183447" stroke-width="6" stroke-linecap="round"/></g>
+              <g id="glasses" style="display:none" fill="none" stroke="#6b4c85" stroke-width="6"><circle cx="101" cy="111" r="43"/><circle cx="203" cy="121" r="39"/><path d="M144 113 L161 116"/></g>
+            </svg>
+            <div class="pet-name" id="petName">Minty <span>♡</span></div>
+            <div class="pet-mood" id="moodBubble">¡Qué lindo día!</div>
+          </div>
+          <div class="room-floor"></div>
+          <div class="scene-hint" id="sceneHint">Elegí una habitación para cuidar a Minty ✨</div>
+        </div>
+        <div class="room-actions" id="roomActions"></div>
+      </section>
+
+      <aside class="right-card">
+        <div class="card-heading"><div><span class="eyebrow">HOY CON MINTY</span><h2>Tu resumen</h2></div><span class="tiny-sparkle">✧</span></div>
+        <div class="daily-note"><span class="note-icon">💌</span><div><strong id="dailyTitle">¡Sos su persona favorita!</strong><p id="dailyText">Un poquito de cariño hace una gran diferencia.</p></div></div>
+        <div class="quick-title">CUIDADOS RÁPIDOS</div>
+        <button class="quick-action" data-action="snack"><span class="quick-icon peach">🍑</span><span><b>Dar una frutita</b><small>Recuperá hambre</small></span><span class="chevron">›</span></button>
+        <button class="quick-action" data-action="wash"><span class="quick-icon aqua">🫧</span><span><b>Un baño express</b><small>Dejalo reluciente</small></span><span class="chevron">›</span></button>
+        <button class="quick-action" data-action="play"><span class="quick-icon lilac">🎾</span><span><b>Jugar un ratito</b><small>¡Y ganar monedas!</small></span><span class="chevron">›</span></button>
+        <div class="achievement"><span>🌟</span><div><b>Pequeños logros</b><p id="achievementText">Cuidá a Minty para conseguir XP.</p></div></div>
+      </aside>
+    </main>
+    <footer><span>✦ Hecho con cariño para vos y Minty</span><span id="saveStatus">Progreso guardado en este dispositivo</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><div id="modalContent"></div></section></div>
+  <script src="app.js"></script>
+</body>
+</html>

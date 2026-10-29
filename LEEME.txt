@@ -1,0 +1,20 @@
+MINTY — MASCOTITA VIRTUAL
+========================
+
+Cómo abrir:
+1. Descomprimí el ZIP.
+2. Abrí index.html con Chrome, Edge o Firefox.
+3. No necesita instalar nada ni ejecutar un servidor.
+
+Incluye:
+- Cocina con alimentos y monedas.
+- Baño con jabón y ducha.
+- Laboratorio con pociones.
+- Dormitorio con sueño y armario.
+- Sala de juegos con tres minijuegos.
+- Tienda, accesorios, inventario y colores.
+- Barras de hambre, salud, diversión y energía.
+- XP, niveles, guardado automático en localStorage.
+
+Nota:
+Es un primer prototipo funcional para seguir ampliando. El guardado se realiza en el navegador/dispositivo actual. La imagen original se incluye como referencia visual; el personaje que se muestra en pantalla está dibujado en SVG para que no aparezca el patrón de cuadros de la imagen de referencia.
